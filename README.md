@@ -28,13 +28,21 @@ Profiles REST API course code.
     2. Django Rest Framework
 
 - to manage all the dependencies we will use requirment.txt and we will put all the packages in it and the to install type the command 
+
 ``pip install -r requirements.txt // this will install all the packages ``
-<img src="https://share.getcloudapp.com/mXuqvPZB">
 
 - Now after setting up all our environment we can create project 
+
 ``django-admin.py startproject project_name . ``
+
 - . is specifying the path where we want to create the project dir
 > Inside Django project we can create different application i.e one project can consists of one or more sub applications within the in projects.
+
 ``python manage.py startapp profiles_api`` 
 - TO run and test our application type below command
+
 ``python manage.py runserver 0.0.0.0:8000``
+
+``python manage.py makemigrations app_name`` // to create a migration file using django cli
+
+`` python manage.py migrate`` //this will run all the migrations in our projects 
