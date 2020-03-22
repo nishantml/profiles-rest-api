@@ -48,3 +48,5 @@ Profiles REST API course code.
 `` python manage.py migrate`` //this will run all the migrations in our projects 
 
 - to access the admin panel http://127.0.0.1:8000/admin/ type superuser cred 
+
+- We have added serializer to a view which allow us (it is the features from the django rest framework) to easily convert data input into Python objects and vice versa its kind a similar to the django form. 
