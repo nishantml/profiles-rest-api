@@ -3,7 +3,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
+
 from profiles_api import serializers
+from profiles_api import models
+from profiles_api import permissions
 
 
 # Create your views here.
@@ -50,6 +54,7 @@ class HelloApiView(APIView):
 class HelloViewSet(viewsets.ViewSet):
     """Test API ViewSet"""
     serializer_class = serializers.HelloSerializer
+
     def list(self, request):
         """return a hello message"""
         a_viewset = [
@@ -90,4 +95,15 @@ class HelloViewSet(viewsets.ViewSet):
         """Handle removing an object"""
         return Response({'http_method': 'DELETE'})
 
+
 #     http://127.0.0.1:8000/api/hello-viewset/21/ to access update delete and patch
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """ Handle creating and updating profiles ->
+    Django rest framework take cares of crud operation for us just by assigning the serializer class to model serializer
+    and the queryset and this is the great thing about model view set"""
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.UpdateOwnProfile,)
