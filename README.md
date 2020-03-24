@@ -60,3 +60,9 @@ Profiles REST API course code.
 - We can restrict the user to update and delete his own profile and we can do that using Django Permission Class 
 
 ``chmod +x deploy/*.sh`` 
+
+``curl -sL https://raw.githubusercontent.com/nishantml/profiles-rest-api/master/deploy/setup.sh | sudo bash -`` // to setup our server on aws
+
+- Now go to setting.py which is in your project and search for ALLOWED_HOSTS this is the setting which enable access via
+ specific domain name its security features to make sure that if somebody just finds a random ip address for our server
+  they can;t access the application unless they use a valid host name.
