@@ -58,3 +58,5 @@ Profiles REST API course code.
     2. ViewSet - [doc link](https://www.django-rest-framework.org/api-guide/viewsets/)
     
 - We can restrict the user to update and delete his own profile and we can do that using Django Permission Class 
+
+``chmod +x deploy/*.sh`` 
